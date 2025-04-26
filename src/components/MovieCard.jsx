@@ -6,7 +6,8 @@ function MovieCard({movie}) {
     const favorite = isFavorite(movie.id)
 
     function onFavoriteClick(e) {
-        e.preventDefault()
+        e.preventDefault()                      // Prevent default action of the button
+        e.stopPropagation()                     // Prevent event bubbling. The stopPropagation() method prevents propagation of the same event from being called. Propagation means bubbling up to parent elements or capturing down to child elements.
         if (favorite) removeFromFavorites(movie.id)
         else addToFavorites(movie)
     }

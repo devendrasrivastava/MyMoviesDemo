@@ -26,7 +26,8 @@ function Home() {
   }, []);
 
   const handleSearch = async (e) => {
-    e.preventDefault();
+    e.preventDefault();                     // Prevent form submission
+    setError(null)                          // Reset error state
     if (!searchQuery.trim()) return
     if (loading) return
 
